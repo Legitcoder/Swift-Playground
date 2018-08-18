@@ -13,7 +13,20 @@ func reverseString(str: String) -> String {
     return reversedString
 }
 
-
 print(reverseString(str: "This is a String"));
 
+
+func reverseStringRecursively(str: String) -> String {
+    if (str == String(str[str.index(str.startIndex, offsetBy: 0)])) {
+        return str;
+    }
+//    let startIndexSubString = str.index(str.startIndex, offsetBy: 0)
+//    let endIndexSubString = str.index(str.startIndex, offsetBy: str.count - 2)
+//    let subStringRange = startIndexSubString ..< endIndexSubString
+//    let subStr = str.substring(with: subStringRange)
+    let endIndex = str.index(str.startIndex, offsetBy: str.count - 2)
+    return String(str[str.index(str.startIndex, offsetBy: str.count-1)]) + reverseStringRecursively(str: String(str[..<endIndex]))
+}
+
+print(reverseString(str: "This is a String"));
 

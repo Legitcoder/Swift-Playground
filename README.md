@@ -1,3 +1,0 @@
-# Swift-Playground
-
-Practicing Swift 
