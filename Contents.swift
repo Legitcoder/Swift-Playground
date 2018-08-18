@@ -13,20 +13,23 @@ func reverseString(str: String) -> String {
     return reversedString
 }
 
-print(reverseString(str: "This is a String"));
 
-
+//Reverse String Recursively
 func reverseStringRecursively(str: String) -> String {
     if (str == String(str[str.index(str.startIndex, offsetBy: 0)])) {
-        return str;
+        return str
     }
 //    let startIndexSubString = str.index(str.startIndex, offsetBy: 0)
 //    let endIndexSubString = str.index(str.startIndex, offsetBy: str.count - 2)
 //    let subStringRange = startIndexSubString ..< endIndexSubString
 //    let subStr = str.substring(with: subStringRange)
-    let endIndex = str.index(str.startIndex, offsetBy: str.count - 2)
-    return String(str[str.index(str.startIndex, offsetBy: str.count-1)]) + reverseStringRecursively(str: String(str[..<endIndex]))
+    let endIndex = str.index(str.startIndex, offsetBy: str.count - 1)
+    return String(str[str.index(str.startIndex, offsetBy: str.count - 1)]) + reverseStringRecursively(str: String(str[..<endIndex])) // last character + rest of substring
 }
 
-print(reverseString(str: "This is a String"));
+
+print(reverseStringRecursively(str: "This is reversed"))
+
+
+
 
