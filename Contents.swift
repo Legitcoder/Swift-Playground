@@ -14,6 +14,8 @@ func reverseString(str: String) -> String {
 }
 
 
+print(reverseString(str: "This is reversed"))
+
 //Reverse String Recursively
 func reverseStringRecursively(str: String) -> String {
     if (str == String(str[str.index(str.startIndex, offsetBy: 0)])) {
@@ -28,8 +30,58 @@ func reverseStringRecursively(str: String) -> String {
 }
 
 
-print(reverseStringRecursively(str: "This is reversed"))
+print(reverseStringRecursively(str: "This is reversed recursively"))
+
+//Ternary Operator
+
+func isYoung(age: Int) -> Bool {
+    if(age < 30) {
+        return true
+    } else {
+        return false
+    }
+}
 
 
+func printAgeMessage(myAge: Int) {
+    isYoung(age: myAge) ? print("You're less than 30, Still young I guess") : print("Damn Gramps, you getting old!!!")
+}
+
+printAgeMessage(myAge: 26)
+printAgeMessage(myAge: 35)
+
+
+// Arrays
+var numArray : [Int] = [1,2,3,4,5]
+numArray += [6,7]
+numArray.append(8)
+numArray.insert(0, at: 0) //Pushes the rest of the elements once to the right
+numArray.remove(at: 0) // Pushes elements to the left after deleting target
+
+
+//loops
+for number in numArray where number % 3 == 0 {
+    //print(number)
+}
+
+for i in 1...100 {
+    if(i % 3 == 0 && i % 5 == 0) {
+        print("FizzBuzz")
+    }
+    else if(i % 3 == 0) {
+        print("Fizz")
+    }
+    else if(i % 5 == 0) {
+        print("Buzz")
+    }
+    else {
+        print(i)
+    }
+}
+
+//Optionals
+var thisIsAnOptional : String?
+thisIsAnOptional = "This is now assigned a value"
+print(thisIsAnOptional!)
 
 
